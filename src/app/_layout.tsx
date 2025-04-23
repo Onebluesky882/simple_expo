@@ -1,16 +1,48 @@
+import React from "react";
 import "../global.css";
-import { Slot, Stack } from "expo-router";
+import { Tabs } from "expo-router";
+import { Entypo } from "@expo/vector-icons";
 
 export default function Layout() {
   return (
-    <Stack>
-      <Stack.Screen
-        name="provers/[id]"
-        options={({ route }) => ({
-          title: "prove" + route.params,
-          animation: "none",
-        })}
+    <Tabs
+      backBehavior="order"
+      screenOptions={{
+        tabBarActiveTintColor: "pink",
+        tabBarBadgeStyle: { color: "white", backgroundColor: "tomato" },
+      }}
+    >
+      <Tabs.Screen
+        name="index"
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Entypo name="home" size={size} color={color} />
+          ),
+        }}
       />
-    </Stack>
+      <Tabs.Screen
+        name="one"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="cart"
+        options={{
+          tabBarBadge: 6,
+          tabBarIcon: ({ color, size }) => (
+            <Entypo name="home" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="second"
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Entypo name="home" size={size} color={color} />
+          ),
+        }}
+      />
+    </Tabs>
   );
 }

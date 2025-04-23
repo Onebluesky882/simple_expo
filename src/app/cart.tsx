@@ -1,9 +1,9 @@
 import { View, Text } from "react-native";
-const second = () => {
+const cart = () => {
   return (
     <View>
-      <Text>second</Text>
+      <Text>Cart</Text>
     </View>
   );
 };
-export default second;
+export default cart;
